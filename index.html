@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VitaSync ZMR Engine</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+</head>
+
+<body>
+  <div class="app-container">
+
+    <aside class="sidebar">
+      <div class="logo">
+        <div class="logo-icon">+</div>
+        <div>
+          <h2>VitaSync ZMR</h2>
+          <p>Healthcare Intelligence</p>
+        </div>
+      </div>
+
+      <nav class="modules-nav">
+        <button class="module-btn active" data-target="search">🏥 Search Hospital</button>
+        <button class="module-btn" data-target="assistant">🤖 AI Assistant</button>
+        <button class="module-btn" data-target="trust">🛡 Trust Score</button>
+        <button class="module-btn" data-target="reports">📊 Reports</button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <p>System Health</p>
+        <strong>Stable & Active</strong>
+      </div>
+    </aside>
+
+    <main class="main-content">
+
+      <header class="top-header">
+        <div>
+          <h1>VitaSync ZMR Engine</h1>
+          <p>Find reliable hospitals based on ICU, oxygen, emergency and medical capabilities.</p>
+        </div>
+        <span class="status-badge">● System Online</span>
+      </header>
+
+      <section id="search" class="module active">
+        <div class="card">
+          <h2>Search Hospital</h2>
+          <p>Enter your medical need and get suitable hospital suggestions.</p>
+
+          <div class="search-row">
+            <input
+              type="text"
+              id="search-box"
+              placeholder="Example: ICU oxygen emergency"
+            />
+            <button id="search-btn">Find Hospital</button>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <h3>12</h3>
+            <p>Hospitals Scanned</p>
+          </div>
+          <div class="stat-card">
+            <h3>72%</h3>
+            <p>ICU Available</p>
+          </div>
+          <div class="stat-card">
+            <h3>45%</h3>
+            <p>24/7 Oxygen</p>
+          </div>
+        </div>
+
+        <div id="results" class="results"></div>
+      </section>
+
+      <section id="assistant" class="module">
+        <div class="card">
+          <h2>AI Assistant</h2>
+          <p>Describe the patient need in simple words.</p>
+
+          <textarea
+            id="ai-input"
+            placeholder="Example: I need ICU and emergency oxygen right now"
+          ></textarea>
+
+          <button id="ai-btn">Get Recommendation</button>
+
+          <div id="ai-output" class="ai-output">
+            AI recommendation will appear here.
+          </div>
+        </div>
+      </section>
+
+     <section id="trust" class="module">
+  <div class="card animate-card">
+    <h2>Trust Score System</h2>
+    <p>Hospital data reliability is checked using services, missing data and emergency readiness.</p>
+
+    <div class="trust-dashboard">
+      <div class="trust-meter">
+        <div class="score-circle">
+          <span>88</span>
+          <small>/100</small>
+        </div>
+        <h3>City Care Hospital</h3>
+        <p class="high">High Reliability</p>
+      </div>
+
+      <div class="score-bars">
+        <div class="bar-item">
+          <span>ICU Data</span>
+          <div class="bar"><div style="width: 92%"></div></div>
+        </div>
+
+        <div class="bar-item">
+          <span>Oxygen Availability</span>
+          <div class="bar"><div style="width: 78%"></div></div>
+        </div>
+
+        <div class="bar-item">
+          <span>Emergency Support</span>
+          <div class="bar"><div style="width: 85%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="trust-chat">
+      <div class="chat ai">AI Insight: City Care Hospital has strong ICU and emergency data.</div>
+      <div class="chat system">System: Oxygen data is available but should be confirmed before visit.</div>
+      <div class="chat ai">AI Insight: Overall trust score is high.</div>
+    </div>
+  </div>
+   </section>
+
+      <section id="reports" class="module">
+        <div class="card">
+          <h2>Reports & Analytics</h2>
+          <p>Overall hospital capability overview.</p>
+
+          <div class="report-list">
+            <div><span>ICU Capability</span><strong>72%</strong></div>
+            <div><span>Oxygen Availability</span><strong>45%</strong></div>
+            <div><span>High Trust Hospitals</span><strong>38%</strong></div>
+            <div><span>Emergency Support</span><strong>64%</strong></div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="map-panel">
+      <div class="map-header">
+        <h3>Nearby Hospitals</h3>
+        <p>Live location-based view</p>
+      </div>
+      <div id="map"></div>
+    </aside>
+
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
